@@ -11,12 +11,13 @@ const login = async (userInfo: UserLogin) => {
       body: JSON.stringify(userInfo),
     });
 
-    const data = await response.json;
+    const data = await response.json();
 
     if (!response.ok) {
       throw new Error("User information not found, check network tab");
     }
-
+    console.log(data);
+    
     return data;
   } catch (err) {
     console.log("Error from user login api", err);
